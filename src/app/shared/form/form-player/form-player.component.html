@@ -1,0 +1,10 @@
+<p>Formulario de Jugador</p>
+
+<form *ngIf="formPlayer" [formGroup]="formPlayer" (submit)="save($event)">
+  <input name="name" type="text" formControlName="name" />
+  <input name="player" type="text" formControlName="player" />
+  
+  <button type="submit" [disabled]="!formPlayer.valid">Guardar</button>
+
+</form>
+{{ formPlayer?.value | json }}

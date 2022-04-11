@@ -1,0 +1,15 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.footer {
+  display: flex;
+  align-items: space-around;
+  justify-content: center;
+  height: 15rem;
+  color: #fff;
+  background-color: blue;
+
+  @include m.tablet {
+    height: 10vh;
+  }
+}

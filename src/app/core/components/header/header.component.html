@@ -1,0 +1,9 @@
+<header class="header">
+  <img class="header__logo" src="{{ src_logo }}" alt="logo" />
+
+  <nav class="nav">
+    <a class="nav__link" *ngFor="let item of menu" [routerLink]="item.link" routerLinkActive="nav__link--active"> {{
+      item.name
+      }}</a>
+  </nav>
+</header>

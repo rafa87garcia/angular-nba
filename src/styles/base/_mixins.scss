@@ -1,0 +1,20 @@
+@use "variables" as v;
+
+@mixin tablet {
+  @media only screen and (min-width: v.$tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: v.$desktop) {
+    @content;
+  }
+}
+
+@mixin background-image-opacity($url) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}

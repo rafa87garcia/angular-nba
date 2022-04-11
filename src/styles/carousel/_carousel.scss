@@ -1,0 +1,45 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.carousel {
+  @include m.background-image-opacity("../../images/1736-nba.jpg");
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  height: 30vh;
+
+  @include m.tablet {
+    height: 50vh;
+  }
+  @include m.desktop {
+    height: 70vh;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    opacity: 0.6;
+  }
+  &__title {
+    position: relative;
+    color: v.$white;
+    font-size: 4rem;
+    text-shadow: 0 0 3rem 0 red;
+
+    @include m.tablet {
+      font-size: 10rem;
+    }
+    @include m.desktop {
+      font-size: 10rem;
+    }
+  }
+}
