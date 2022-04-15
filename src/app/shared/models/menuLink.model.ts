@@ -1,5 +1,5 @@
-export interface MenuLinkInterface {
+export interface MenuLink {
   name: string,
   link: string,
-  sub?: MenuLinkInterface[],
+  sub?: MenuLink[],
 }

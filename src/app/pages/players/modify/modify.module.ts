@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ModifyRoutingModule } from './modify-routing.module';
-import { FormPlayerModule } from 'src/app/shared/form/form-player/form-player.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -10,7 +10,7 @@ import { FormPlayerModule } from 'src/app/shared/form/form-player/form-player.mo
   imports: [
     CommonModule,
     ModifyRoutingModule,
-    FormPlayerModule
+    SharedModule
   ]
 })
 export class ModifyModule { }

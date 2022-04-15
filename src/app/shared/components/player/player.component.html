@@ -1,9 +1,17 @@
 <div *ngIf="player" class="card-player">
-  <h2>{{ player.name }}</h2>
+  <p *ngIf="preview">Preview</p>
+
+  <h3><span>{{ player.last_name }}</span><span *ngIf=" player.first_name">,{{ player.first_name }}</span></h3>
   <p>{{player.position}}</p>
-  <div *ngIf="player.id">
+  <p>{{player.height_feet}}</p>
+  <p>{{player.height_inches}}</p>
+
+  <div *ngIf="enabledEdit">
     <a [routerLink]="['/players/detail', player.id]">
       ver detalle
     </a>
   </div>
+
+  <button *ngIf="enabledEdit" (click)="editPlayer()">Editar</button>
+  <button *ngIf="enabledEdit" (click)="deletePlayer()">Eliminar</button>
 </div>

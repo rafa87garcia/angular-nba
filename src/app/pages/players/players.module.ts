@@ -6,8 +6,9 @@ import { ListComponent } from './list/list.component';
 import { CreateComponent } from './create/create.component';
 import { ModifyComponent } from './modify/modify.component';
 import { PlayersRoutingModule } from './players-routing.module';
-import { FormPlayerModule } from 'src/app/shared/form/form-player/form-player.module';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { PipesModule } from 'src/app/pipes/pipes.module';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,9 +20,10 @@ import { SharedModule } from 'src/app/shared/shared.module';
   ],
   imports: [
     CommonModule,
-    FormPlayerModule,
     PlayersRoutingModule,
     SharedModule,
+    FormsModule,
+    PipesModule,
   ],
   exports: [
     PlayersComponent,

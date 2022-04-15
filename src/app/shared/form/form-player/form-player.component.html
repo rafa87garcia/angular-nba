@@ -1,10 +1,26 @@
-<p>Formulario de Jugador</p>
+<div class="player">
+  <form *ngIf="formPlayer" [formGroup]="formPlayer" (ngSubmit)="save($event)">
 
-<form *ngIf="formPlayer" [formGroup]="formPlayer" (submit)="save($event)">
-  <input name="name" type="text" formControlName="name" />
-  <input name="player" type="text" formControlName="player" />
-  
-  <button type="submit" [disabled]="!formPlayer.valid">Guardar</button>
+    <label for="name">First name</label>
+    <input name="first_name" type="text" formControlName="first_name" />
 
-</form>
-{{ formPlayer?.value | json }}
+    <label for="name">Last name</label>
+    <input name="last_name" type="text" formControlName="last_name" />
+
+    <label for="name">Height feet</label>
+    <input name="height_feet" type="number" formControlName="height_feet" />
+
+    <label for="name">Height inches</label>
+    <input name="height_inches" type="number" formControlName="height_inches" />
+
+    <label for="position">Position</label>
+    <input name="position" type="text" formControlName="position" />
+
+    <button type="submit" [disabled]="!formPlayer.valid">{{ player ? 'Edit' : 'Create' }}</button>
+  </form>
+</div>
+<div>
+  <app-player [player]="formPlayer?.value">
+  </app-player>
+  {{formPlayer?.value | json }}
+</div>

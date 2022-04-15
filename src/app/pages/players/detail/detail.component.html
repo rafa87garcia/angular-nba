@@ -1,4 +1,6 @@
-<div *ngIf="player" class="content">
-  <a [routerLink]="['/players/list']">Volver al listado</a>
-  <app-player [player]="player"></app-player>
+<div class="content">
+  <div *ngIf="player">
+    <a [routerLink]="['/players/list']">Volver al listado</a>
+    <app-player [player]="player" show='detail'></app-player>
+  </div>
 </div>

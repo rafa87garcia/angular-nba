@@ -1,4 +1,4 @@
-export interface TeamInterface {
+export interface Team {
   id: string
   name: string,
   full_name: string,

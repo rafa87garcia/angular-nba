@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MenuLinkInterface } from './shared/models/menuLink.model';
+import { MenuLink } from './shared/models/menuLink.model';
 import { SocialMediaLink } from './shared/models/socialMediaLink.model';
 
 @Component({
@@ -10,20 +10,24 @@ import { SocialMediaLink } from './shared/models/socialMediaLink.model';
 export class AppComponent {
   title = 'nba';
 
-  public menuLinks: MenuLinkInterface[] = [];
+  public menuLinks: MenuLink[] = [];
   public menuSocialMediaLinks: SocialMediaLink[] = [];
+  public menuUser: MenuLink[] = [];
 
   constructor() {
     this.menuLinks = [
-      { name: "inicio", link: "/" },
-      { name: "jugadores", link: "/players/list" },
-      { name: "equipos", link: "/teams/list" },
+      { name: "players", link: "/players/list" },
+      { name: "teams", link: "/teams/list" },
     ]
+    this.menuUser = [
+      { name: "Create player", link: "/players/create" },
+    ];
 
     this.menuSocialMediaLinks = [
       { icon: "fa-facebook", link: "https://www.facebook.com/nba" },
       { icon: "fa-twitter", link: "http://twitter.com" },
       { icon: "fa-instagram", link: "http://instagram.com" }
     ]
+
   }
 }

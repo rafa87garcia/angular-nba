@@ -1,5 +1,8 @@
-export interface PlayerInterface {
+export interface Player {
   id: string,
-  name: string,
+  first_name: string,
+  last_name: string,
+  height_feet: number,
+  height_inches: number,
   position: string
 }

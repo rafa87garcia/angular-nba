@@ -5,11 +5,7 @@
   display: flex;
   align-items: space-around;
   justify-content: center;
-  height: 15rem;
+  height: 5rem;
   color: #fff;
   background-color: blue;
-
-  @include m.tablet {
-    height: 10vh;
-  }
 }

@@ -12,7 +12,7 @@ export class FooterComponent implements OnInit {
 
   public icon = faFilm;
 
-  @Input() socialMedia: SocialMediaLink[] = [];
+  @Input() public socialMedia: SocialMediaLink[] = [];
 
   constructor() { }
 

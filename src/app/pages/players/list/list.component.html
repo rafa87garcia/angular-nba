@@ -1,7 +1,11 @@
 <div class="content">
-  <div class="list-players">
-    <div *ngFor="let player of players">
-      <app-player [player]="player"></app-player>
+  <label for="filter">Buscar</label>
+  <input type="text" placeholder="Buscar por nombre" [(ngModel)]="filter" name="filter" />
+  <div class="content">
+    <div class="list-players">
+      <div *ngFor="let player of ( players | filterPlayer: filter )">
+        <app-player [player]="player" [enabledEdit]="true" (OnDeletePlayer)="deletePlayer($event)"></app-player>
+      </div>
     </div>
+    <p *ngIf="players.length===0">No hay datos.</p>
   </div>
-</div>

@@ -9,6 +9,8 @@ import { RouterModule } from '@angular/router';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SharedModule } from './shared/shared.module';
+import { PipesModule } from './pipes/pipes.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { SharedModule } from './shared/shared.module';
     CoreModule,
     HttpClientModule,
     FontAwesomeModule,
+    FormsModule,
     SharedModule,
+    PipesModule,
   ],
   bootstrap: [AppComponent]
 })

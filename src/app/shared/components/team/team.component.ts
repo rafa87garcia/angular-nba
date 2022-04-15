@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { TeamInterface } from '../../models/team.model';
+import { Team } from '../../models/team.model';
 
 @Component({
   selector: 'app-team',
@@ -8,7 +8,7 @@ import { TeamInterface } from '../../models/team.model';
 })
 export class TeamComponent implements OnInit {
 
-  @Input() team?: TeamInterface;
+  @Input() public team?: Team;
 
   constructor() { }
 

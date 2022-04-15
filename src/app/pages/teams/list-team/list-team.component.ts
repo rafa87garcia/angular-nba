@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TeamInterface } from 'src/app/shared/models/team.model';
+import { Team } from 'src/app/shared/models/team.model';
 import { TeamsService } from 'src/app/shared/services/team.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { TeamsService } from 'src/app/shared/services/team.service';
 })
 export class ListTeamComponent implements OnInit {
 
-  public teams?: TeamInterface[] = [];
+  public teams?: Team[] = [];
 
   constructor(
     private teamService: TeamsService,
