@@ -3,12 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '', loadChildren: () =>
+    path: '', pathMatch: 'full', loadChildren: () =>
       import('./pages/home/home.module').then(m => m.HomeModule)
   },
   {
     path: 'players', loadChildren: () =>
       import('./pages/players/players.module').then(m => m.PlayersModule)
+  },
+  {
+    path: 'teams', loadChildren: () =>
+      import('./pages/teams/teams.module').then(m => m.TeamsModule)
   },
 ];
 

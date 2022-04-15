@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home.component';
 
 const routes: Routes = [
   {
-    path: '',
-    pathMatch: 'full',
-    component: HomeComponent
+    path: 'list', loadChildren: () =>
+      import('./list-team/list-team.module').then(m => m.ListTeamModule)
   },
 ];
 
@@ -14,4 +12,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class HomeRoutingModule { }
+export class TeamsRoutingModule { }

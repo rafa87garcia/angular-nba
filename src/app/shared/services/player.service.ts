@@ -12,7 +12,9 @@ const path_base: string = "https://www.balldontlie.io/api/v1";
 })
 export class PlayerService {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
   public getPlayers(): Observable<PlayerInterface[]> {
 
@@ -20,15 +22,23 @@ export class PlayerService {
       .pipe(
         map(res => res.data),
         map(data => {
-          return data.map(({ first_name, position }: any) => ({
-            name: first_name,
-            position: position
+          return data.map((player: any) => ({
+            id: player.id,
+            name: player.first_name,
+            position: player.position
           }));
         })) as Observable<PlayerInterface[]>;
-      // .pipe(
-      //   map(res => {
-      //      return res.map(data => data);
-      //   }) as Observable<PlayerInterface[]>
-      // )
+  }
+
+  public getPlayerById(id: String): Observable<PlayerInterface> {
+    return (this.http.get<PlayerInterface>(`${path_base}/players/${id}`) as Observable<any>)
+      .pipe(
+        map(data => {
+          const player = data;
+          return ({
+            name: player.first_name,
+            position: player.position
+          })
+        })) as Observable<PlayerInterface>;
   }
 }

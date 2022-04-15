@@ -7,6 +7,7 @@ import { CreateComponent } from './create/create.component';
 import { ModifyComponent } from './modify/modify.component';
 import { PlayersRoutingModule } from './players-routing.module';
 import { FormPlayerModule } from 'src/app/shared/form/form-player/form-player.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { FormPlayerModule } from 'src/app/shared/form/form-player/form-player.mo
     CommonModule,
     FormPlayerModule,
     PlayersRoutingModule,
+    SharedModule,
   ],
   exports: [
     PlayersComponent,

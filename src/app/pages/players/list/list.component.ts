@@ -9,14 +9,14 @@ import { PlayerService } from 'src/app/shared/services/player.service';
 })
 export class ListComponent implements OnInit {
 
-  players: PlayerInterface[] = []
-  constructor(private playerService: PlayerService) { }
+  public players: PlayerInterface[] = [];
+  constructor(
+    private playerService: PlayerService
+  ) { }
 
   ngOnInit(): void {
     this.playerService.getPlayers().subscribe((data) => {
-      
       this.players = data;
-      console.log(this.players);
     });
   }
 

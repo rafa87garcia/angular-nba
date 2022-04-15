@@ -16,7 +16,8 @@ export class AppComponent {
   constructor() {
     this.menuLinks = [
       { name: "inicio", link: "/" },
-      { name: "Jugadores", link: "/players/list" },
+      { name: "jugadores", link: "/players/list" },
+      { name: "equipos", link: "/teams/list" },
     ]
 
     this.menuSocialMediaLinks = [

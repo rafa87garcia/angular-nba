@@ -1,0 +1,4 @@
+<div *ngIf="team">
+  <h3>{{team.name}}</h3>
+  <a [routerLink]="['/teams/detail', team.id]">Ver detalle</a>
+</div>

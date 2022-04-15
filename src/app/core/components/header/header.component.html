@@ -1,8 +1,26 @@
 <header class="header">
   <img class="header__logo" src="{{ src_logo }}" alt="logo" />
 
+  <input type="checkbox" id="check">
+  <label for="check" class="nav-mobile__btn">
+    Menu
+  </label>
+  <nav class="nav-mobile">
+    <input type="checkbox" id="check-close">
+    <label for="check-close" class="nav-mobile__btn--active">
+      Cerrar
+    </label>
+    <a *ngFor="let item of menu" [routerLink]="item.link" [routerLinkActive]="['nav-mobile__link--active']"
+      [routerLinkActiveOptions]="{ exact: true }" class="nav-mobile__link"> {{
+      item.name
+      }}
+
+    </a>
+  </nav>
   <nav class="nav">
-    <a class="nav__link" *ngFor="let item of menu" [routerLink]="item.link" routerLinkActive="nav__link--active"> {{
+    <a *ngFor="let item of menu" [routerLink]="item.link" [routerLinkActive]="['nav__link--active']"
+      [routerLinkActiveOptions]="{ exact: true }" class="nav__link">
+      {{
       item.name
       }}</a>
   </nav>
