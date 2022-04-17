@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Player } from '../../models/player.model';
+import { Player } from '../../../core/models/player.model';
 
 @Component({
   selector: 'app-player',

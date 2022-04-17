@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Player } from '../../models/player.model';
-import { PlayerService } from '../../services/player.service';
+import { Player } from '../../../core/models/player.model';
+import { PlayerService } from '../../../core/services/player.service';
 
 @Component({
   selector: 'app-form-player',
@@ -23,8 +23,6 @@ export class FormPlayerComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.player);
-
     this.formPlayer = new FormGroup({
       first_name: new FormControl(this.player?.first_name || '', [Validators.required]),
       last_name: new FormControl(this.player?.last_name || '', [Validators.required]),
@@ -40,8 +38,12 @@ export class FormPlayerComponent implements OnInit {
 
     if (this.formPlayer?.valid) {
       let playerRequest;
-      console.log(this.formPlayer?.value);
-      playerRequest = this.playerService.createPlayer(this.formPlayer?.value);
+      if (!this.player?.id) {
+        playerRequest = this.playerService.createPlayer(this.formPlayer?.value);
+      } else {
+        playerRequest = this.playerService.editPlayer(this.player?.id, this.formPlayer?.value);
+      }
+
       playerRequest.subscribe(() => {
         this.route.navigate(['players/list']);
       });

@@ -8,15 +8,11 @@ import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [
-    DetailComponent
   ],
   imports: [
     CommonModule,
     DetailRoutingModule,
     SharedModule,
-  ],
-  exports: [
-    DetailComponent
   ]
 })
 export class DetailModule { }

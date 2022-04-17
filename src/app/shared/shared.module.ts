@@ -2,10 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PlayerComponent } from './components/player/player.component';
 import { RouterModule } from '@angular/router';
-import { TeamComponent } from './components/team/team.component';
-import { FormPlayerComponent } from './form/form-player/form-player.component';
+
+import { FormPlayerComponent } from './components/form-player/form-player.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { FilterPlayerPipe } from '../pipes/filter-player.pipe';
+import { FilterPlayerPipe } from './pipes/filter-player.pipe';
+import { TeamsComponent } from './components/team/team.component';
 
 
 
@@ -13,7 +14,8 @@ import { FilterPlayerPipe } from '../pipes/filter-player.pipe';
   declarations: [
     FormPlayerComponent,
     PlayerComponent,
-    TeamComponent,
+    TeamsComponent,
+    FilterPlayerPipe,
   ],
   imports: [
     CommonModule,
@@ -23,7 +25,8 @@ import { FilterPlayerPipe } from '../pipes/filter-player.pipe';
   exports: [
     FormPlayerComponent,
     PlayerComponent,
-    TeamComponent,
+    TeamsComponent,
+    FilterPlayerPipe,
   ]
 })
 export class SharedModule { }

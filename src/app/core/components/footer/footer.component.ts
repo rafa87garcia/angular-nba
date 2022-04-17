@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { SocialMediaLink } from 'src/app/shared/models/socialMediaLink.model';
+import { SocialMediaLink } from 'src/app/core/models/socialMediaLink.model';
 
 import { faFilm } from '@fortawesome/free-solid-svg-icons';
 

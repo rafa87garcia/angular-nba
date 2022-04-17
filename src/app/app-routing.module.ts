@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthUserGuard } from './core/guards/auth-user.guard';
 
 const routes: Routes = [
   {
@@ -18,10 +19,19 @@ const routes: Routes = [
     loadChildren: () =>
       import('./pages/teams/teams.module').then(m => m.TeamsModule)
   },
+  {
+    path: 'my-account',
+    loadChildren: () =>
+      import('./pages/my-account/my-account.module').then(m => m.MyAccountModule),
+    canActivate: [AuthUserGuard]
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
+  providers: [
+    AuthUserGuard
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

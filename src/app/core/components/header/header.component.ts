@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { MenuLink } from 'src/app/shared/models/menuLink.model';
+import { MenuLink } from 'src/app/core/models/menuLink.model';
 
 @Component({
   selector: 'app-header',
@@ -14,8 +14,6 @@ export class HeaderComponent implements OnInit {
   @Input() public menuUser: MenuLink[] = [];
 
   ngOnInit(): void {
-    console.log(this.menuUser);
-
   }
 
 }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { MenuLink } from './shared/models/menuLink.model';
-import { SocialMediaLink } from './shared/models/socialMediaLink.model';
+import { MenuLink } from './core/models/menuLink.model';
+import { SocialMediaLink } from './core/models/socialMediaLink.model';
 
 @Component({
   selector: 'app-root',

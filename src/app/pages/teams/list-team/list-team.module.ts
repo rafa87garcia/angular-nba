@@ -10,6 +10,6 @@ import { ListTeamRoutingModule } from './list-team-routing.module';
   imports: [
     CommonModule,
     ListTeamRoutingModule
-  ]
+  ],
 })
 export class ListTeamModule { }

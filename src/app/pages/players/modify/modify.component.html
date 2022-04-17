@@ -1,5 +1,4 @@
 <div class="content">
   <p>Modificar Jugador</p>
-
-  <app-form-player [player]="player"></app-form-player>
+  <app-form-player *ngIf="player" [player]="player"></app-form-player>
 </div>

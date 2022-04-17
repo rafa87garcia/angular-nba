@@ -1,9 +1,9 @@
 <div class="content">
   <label for="filter">Buscar</label>
-  <input type="text" placeholder="Buscar por nombre" [(ngModel)]="filter" name="filter" />
+  <input type="text" placeholder="Buscar por nombre" [(ngModel)]="filter" />
   <div class="content">
     <div class="list-players">
-      <div *ngFor="let player of ( players | filterPlayer: filter )">
+      <div *ngFor="let player of ( players | filterPlayer:filter )">
         <app-player [player]="player" [enabledEdit]="true" (OnDeletePlayer)="deletePlayer($event)"></app-player>
       </div>
     </div>

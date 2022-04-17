@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Player } from 'src/app/shared/models/player.model';
-import { PlayerService } from 'src/app/shared/services/player.service';
+import { ActivatedRoute } from '@angular/router';
+import { Player } from 'src/app/core/models/player.model';
+import { PlayerService } from 'src/app/core/services/player.service';
 
 @Component({
   selector: 'app-list',
@@ -13,12 +14,14 @@ export class ListComponent implements OnInit {
   public filter: string;
 
   constructor(
-    private playerService: PlayerService
+    private playerService: PlayerService,
+    private activatedRoute: ActivatedRoute,
   ) {
     this.filter = '';
   }
 
   ngOnInit(): void {
+    // this.players = this.activatedRoute.snapshot.data[0];
     this.getPlayers();
   }
 
@@ -30,7 +33,6 @@ export class ListComponent implements OnInit {
 
   public deletePlayer(id: string) {
     this.playerService.deletePlayer(id).subscribe(res => {
-      console.log(res);
       this.getPlayers();
     });
   }

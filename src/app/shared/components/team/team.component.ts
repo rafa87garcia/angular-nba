@@ -1,12 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Team } from '../../models/team.model';
+import { Team } from '../../../core/models/team.model';
 
 @Component({
   selector: 'app-team',
   templateUrl: './team.component.html',
   styleUrls: ['./team.component.scss']
 })
-export class TeamComponent implements OnInit {
+export class TeamsComponent implements OnInit {
 
   @Input() public team?: Team;
 

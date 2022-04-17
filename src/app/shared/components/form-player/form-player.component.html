@@ -1,5 +1,5 @@
 <div class="player">
-  <form *ngIf="formPlayer" [formGroup]="formPlayer" (ngSubmit)="save($event)">
+  <form *ngIf="formPlayer" [formGroup]="formPlayer" (submit)="save($event)">
 
     <label for="name">First name</label>
     <input name="first_name" type="text" formControlName="first_name" />
@@ -22,5 +22,4 @@
 <div>
   <app-player [player]="formPlayer?.value">
   </app-player>
-  {{formPlayer?.value | json }}
 </div>

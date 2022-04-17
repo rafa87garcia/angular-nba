@@ -1,5 +1,7 @@
-<div *ngIf="teams">
-  <div *ngFor="let team of teams">
-    <app-team [team]="team"></app-team>
+<div class="content">
+  <div *ngIf="teams">
+    <div *ngFor="let team of teams">
+      <app-team [team]="team"></app-team>
+    </div>
   </div>
 </div>
